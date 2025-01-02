@@ -28,13 +28,13 @@ class base_test(unittest.TestCase):
         driver = self.driver
         f = Funciones_Globales(driver)
         f.Navegar("https://demoqa.com/automation-practice-form", t)
-        f.Upload_Xpath("//input[@id='uploadPicture']","C:\\Users\\djpab\\PycharmProjects\\Curso_selenium\\imagenes\\deku.jpg", 3)
+        f.Upload_Mixto("xpath" ,"//input[@id='uploadPicture']","C:\\Users\\djpab\\PycharmProjects\\Curso_selenium\\imagenes\\deku.jpg", 3)
 
     def test3(self):
         driver = self.driver
         f = Funciones_Globales(driver)
         f.Navegar("https://demoqa.com/automation-practice-form", t)
-        f.Check_Xpath("//label[contains(.,'Sports')]", t)
+        f.Check_Mixto("xpath","//label[contains(.,'Sports')]", t)
 
     def test4(self):
         driver = self.driver
@@ -42,7 +42,7 @@ class base_test(unittest.TestCase):
         f.Navegar("https://demoqa.com/automation-practice-form", t)
         #f.Check_Xpath_Multiple(t, "//label[@for='hobbies-checkbox-1']", "//label[@for='hobbies-checkbox-2']", "//label[@for='hobbies-checkbox-3']")
         for n in range(1,4):
-            f.Check_Xpath_Multiple(t, "//label[@for='hobbies-checkbox-"+str(n)+"']")
+            f.Check_Mixto("xpath", "//label[@for='hobbies-checkbox-"+str(n)+"']", t)
 
     def tearDown(self):
         self.driver.close()
